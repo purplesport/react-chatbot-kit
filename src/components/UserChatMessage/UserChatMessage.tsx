@@ -26,7 +26,7 @@ const UserChatMessage = ({
         })}
         elseShow={
           <div className="react-chatbot-kit-user-chat-message">
-            {<Latex>message</Latex>}
+            {<Latex>{message}</Latex>}
             <div className="react-chatbot-kit-user-chat-message-arrow"></div>
           </div>
         }
