@@ -3,7 +3,7 @@ import ConditionallyRender from 'react-conditionally-render';
 
 import UserChatMessage from '../UserChatMessage/UserChatMessage';
 import ChatbotMessage from '../ChatbotMessage/ChatbotMessage';
-
+import { MathJax, MathJaxContext } from "better-react-mathjax";
 import {
   botMessage,
   userMessage,
@@ -20,7 +20,16 @@ import {
   ICustomStyles,
 } from '../../interfaces/IConfig';
 import { IMessage } from '../../interfaces/IMessages';
-
+const conf = {
+  loader: { load: ["input/asciimath"] },
+  asciimath: {
+    displaystyle: true,
+    delimiters: [
+      ["$", "$"],
+      ["`", "`"]
+    ]
+  }
+};
 
 interface IChatProps {
   setState: React.Dispatch<SetStateAction<any>>;
@@ -65,7 +74,22 @@ const Chat = ({
   const chatContainerRef = useRef(null);
 
   const [input, setInputValue] = useState('');
-
+  const preview = (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'left',
+        alignItems: 'left',
+        flexDirection: 'column',
+        padding: 24,
+      }}
+    >
+      <text>Preview:</text>
+      <h6>
+      <MathJaxContext config={conf}><MathJax inline>{input}</MathJax></MathJaxContext>
+      </h6>
+    </div>
+  );
   const scrollIntoView = () => {
     setTimeout(() => {
       if (chatContainerRef.current) {
