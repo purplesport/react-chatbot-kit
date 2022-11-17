@@ -323,12 +323,6 @@ const Chat = ({
               value={input}
               onChange={(e) => setInputValue(e.target.value)}
             />
-            <div>
-              Preview:
-            </div>
-            <div>
-        <MathJaxContext config={conf}><MathJax inline>{input}</MathJax></MathJaxContext>
-        </div>
             <
             <button
               className="react-chatbot-kit-chat-btn-send"

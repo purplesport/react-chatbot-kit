@@ -7,17 +7,7 @@ import UserIcon from '../../assets/icons/user-alt.svg';
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import './UserChatMessage.css';
 import { ICustomComponents } from '../../interfaces/IConfig';
-
-const conf = {
-  loader: { load: ["input/asciimath"] },
-  asciimath: {
-    displaystyle: true,
-    delimiters: [
-      ["$", "$"],
-      ["`", "`"]
-    ]
-  }
-};
+var Latex = require('react-latex')
 interface IUserChatMessageProps {
   message: string;
   customComponents: ICustomComponents;
@@ -36,7 +26,7 @@ const UserChatMessage = ({
         })}
         elseShow={
           <div className="react-chatbot-kit-user-chat-message">
-            {<MathJaxContext config={conf}> <MathJax inline>{message}</MathJax></MathJaxContext>}
+            {<Latex>message</Latex>}
             <div className="react-chatbot-kit-user-chat-message-arrow"></div>
           </div>
         }
