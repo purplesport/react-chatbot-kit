@@ -312,6 +312,7 @@ const Chat = ({
           className="react-chatbot-kit-chat-message-container"
           ref={chatContainerRef}
         >
+                 {preview}
           <ConditionallyRender
             condition={
               typeof messageHistory === 'string' && Boolean(messageHistory)
@@ -328,7 +329,6 @@ const Chat = ({
         </div>
 
         <div className="react-chatbot-kit-chat-input-container">
-          {preview}
           <form
             className="react-chatbot-kit-chat-input-form"
             onSubmit={handleSubmit}
