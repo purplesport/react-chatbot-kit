@@ -79,7 +79,7 @@ const Chat = ({
       style={{
         display: 'flex',
         position: 'absolute',
-        bottom: '10px',
+        bottom: '10%',
         justifyContent: 'left',
         alignItems: 'left',
         flexDirection: 'column',
