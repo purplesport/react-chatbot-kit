@@ -21,6 +21,7 @@ import {
 } from '../../interfaces/IConfig';
 import { IMessage } from '../../interfaces/IMessages';
 
+
 interface IChatProps {
   setState: React.Dispatch<SetStateAction<any>>;
   widgetRegistry: any;
@@ -303,7 +304,6 @@ const Chat = ({
         </div>
 
         <div className="react-chatbot-kit-chat-input-container">
-          {preview}
           <form
             className="react-chatbot-kit-chat-input-form"
             onSubmit={handleSubmit}

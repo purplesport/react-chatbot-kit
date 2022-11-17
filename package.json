@@ -9,6 +9,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.14",
+    "better-react-mathjax": "^2.0.2",
     "classnames": "^2.2.6",
     "css-loader": "^3.5.1",
     "react-conditionally-render": "^1.0.2",
