@@ -3,7 +3,7 @@ import ConditionallyRender from 'react-conditionally-render';
 
 import UserChatMessage from '../UserChatMessage/UserChatMessage';
 import ChatbotMessage from '../ChatbotMessage/ChatbotMessage';
-
+import { MathJax, MathJaxContext } from "better-react-mathjax";
 import {
   botMessage,
   userMessage,
@@ -20,7 +20,16 @@ import {
   ICustomStyles,
 } from '../../interfaces/IConfig';
 import { IMessage } from '../../interfaces/IMessages';
-
+const conf = {
+  loader: { load: ["input/asciimath"] },
+  asciimath: {
+    displaystyle: true,
+    delimiters: [
+      ["$", "$"],
+      ["`", "`"]
+    ]
+  }
+};
 
 interface IChatProps {
   setState: React.Dispatch<SetStateAction<any>>;
@@ -311,7 +320,7 @@ const Chat = ({
             <input
               className="react-chatbot-kit-chat-input"
               placeholder={placeholder}
-              value={input}
+              value={<MathJaxContext config={conf}> <MathJax inline>{input}</MathJax></MathJaxContext>}
               onChange={(e) => setInputValue(e.target.value)}
             />
 
