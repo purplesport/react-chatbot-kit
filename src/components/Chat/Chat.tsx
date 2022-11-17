@@ -78,6 +78,8 @@ const Chat = ({
     <div
       style={{
         display: 'flex',
+        position: 'absolute',
+        bottom: 0,
         justifyContent: 'left',
         alignItems: 'left',
         flexDirection: 'column',
@@ -312,7 +314,7 @@ const Chat = ({
           className="react-chatbot-kit-chat-message-container"
           ref={chatContainerRef}
         >
-                 {preview}
+                 
           <ConditionallyRender
             condition={
               typeof messageHistory === 'string' && Boolean(messageHistory)
@@ -326,6 +328,7 @@ const Chat = ({
 
           {renderMessages()}
           <div style={{ paddingBottom: '15px' }} />
+          {preview}
         </div>
 
         <div className="react-chatbot-kit-chat-input-container">
