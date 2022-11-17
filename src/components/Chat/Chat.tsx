@@ -20,7 +20,14 @@ import {
   ICustomStyles,
 } from '../../interfaces/IConfig';
 import { IMessage } from '../../interfaces/IMessages';
-import { string } from 'prop-types';
+import { Button } from '@mui/material';
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  TextField,
+} from '@mui/material';
 
 interface IChatProps {
   setState: React.Dispatch<SetStateAction<any>>;
@@ -41,6 +48,7 @@ interface IChatProps {
   parse?: (message: string) => void;
   actions?: object;
 }
+var Latex = require('react-latex');
 
 const Chat = ({
   state,
@@ -65,6 +73,21 @@ const Chat = ({
   const chatContainerRef = useRef(null);
 
   const [input, setInputValue] = useState('');
+
+  // Dialog states
+  const [isFormulaDialogOpen, setFormulaDialogOpen] = useState(false);
+  const [latex, setLatex] = useState('f(x)=\\log _10 x');
+
+  const handleOpenDialog = () => setFormulaDialogOpen(true);
+  const handleCloseDialog = () => setFormulaDialogOpen(false);
+  // end Dialog states
+
+  const preview = (
+    <div style={{ display: 'flex', flexDirection: 'column', padding: 24 }}>
+      <text>Preview:</text>
+      <Latex displayMode="true">{input}</Latex>
+    </div>
+  );
 
   const scrollIntoView = () => {
     setTimeout(() => {
@@ -304,6 +327,7 @@ const Chat = ({
         </div>
 
         <div className="react-chatbot-kit-chat-input-container">
+          {preview}
           <form
             className="react-chatbot-kit-chat-input-form"
             onSubmit={handleSubmit}
@@ -314,6 +338,7 @@ const Chat = ({
               value={input}
               onChange={(e) => setInputValue(e.target.value)}
             />
+
             <button
               className="react-chatbot-kit-chat-btn-send"
               style={customButtonStyle}
