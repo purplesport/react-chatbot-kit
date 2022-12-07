@@ -328,9 +328,7 @@ const Chat = ({
           />
 
           {renderMessages()}
-          <div style={{ paddingBottom: '15px' }} />
-          {preview}
-        </div>
+  
 
         <div className="react-chatbot-kit-chat-input-container">
           <form
@@ -351,6 +349,9 @@ const Chat = ({
               <ChatIcon className="react-chatbot-kit-chat-btn-send-icon" />
             </button>
           </form>
+        <div style={{ paddingBottom: '15px' }} />
+          {preview}
+        </div>
         </div>
       </div>
     </div>
