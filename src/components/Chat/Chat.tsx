@@ -84,7 +84,6 @@ const Chat = ({
         alignItems: 'left',
         flexDirection: 'column',
         padding: 24,
-        background-color: #FFFFFF,
       }}
     >
       <text>Preview:</text>
