@@ -82,7 +82,6 @@ const Chat = ({
         bottom: '10%',
         justifyContent: 'left',
         alignItems: 'left',
-        backgroundColor: 'white',
         flexDirection: 'column',
         padding: 24,
       }}
@@ -328,7 +327,9 @@ const Chat = ({
           />
 
           {renderMessages()}
-  
+          <div style={{ paddingBottom: '15px' }} />
+          {preview}
+        </div>
 
         <div className="react-chatbot-kit-chat-input-container">
           <form
@@ -351,9 +352,6 @@ const Chat = ({
           </form>
         </div>
       </div>
-       <div style={{ paddingBottom: '15px' }} />
-          {preview}
-        </div>
     </div>
   );
 };
