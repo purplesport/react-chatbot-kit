@@ -82,6 +82,7 @@ const Chat = ({
         bottom: '10%',
         justifyContent: 'left',
         alignItems: 'left',
+        backgroundColor: 'white',
         flexDirection: 'column',
         padding: 24,
       }}
