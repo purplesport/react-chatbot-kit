@@ -350,10 +350,10 @@ const Chat = ({
             </button>
           </form>
         </div>
-                  <div style={{ paddingBottom: '15px' }} />
+      </div>
+       <div style={{ paddingBottom: '15px' }} />
           {preview}
         </div>
-      </div>
     </div>
   );
 };
